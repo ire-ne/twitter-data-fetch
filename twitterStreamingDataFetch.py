@@ -43,5 +43,9 @@ if __name__ == '__main__':
     stream = MyStreamer(APP_KEY, APP_SECRET,
                         OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
     print("streamer instantiated")
-    stream.statuses.filter(track='python, tech, programming, function programming, fp, java, C, C++, ml, AI, artificial intelligence, machines, machine learning', language='en')
-    # stream.statuses.sample(language='en')
+    while True:
+        try:
+            stream.statuses.filter(track='python, tech, programming, function programming, fp, java, C, C++, ml, AI, artificial intelligence, machines, machine learning', language='en')
+            # stream.statuses.sample(language='en')
+        except:
+            continue
